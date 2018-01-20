@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TeslaApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+<div>
+<!-- 	<% if current_user%>
+	Welcome <%=current_user.name%> | <%= link_to "Log Out", '/logout'%>
+	<%else%>
+	<%= link_to "Log In", '/login'%> | <%= link_to "Sign Up", '/signup'%>
+	<%end%> -->
+
+</div>
+<body class= "mt-0">
+   <div class="container-fluid">
+           <nav class="navbar navbar-inverse bg-dark text-white sticky-top">
+             <div class="container-fluid">
+               <div class="navbar-header ">
+                 <a class="navbar-brand text-white logo" href="/"><h4>Tesla Now</h4></a>
+               </div>
+               <!-- <ul class="nav "> -->
+                 <!-- <li class="active pr-5"> -->
+                  <!-- <a class="btn btn-primary btn-lg text-white pt-1 pb-1" href="/reservations">Reservations</a> --><!-- </li> -->
+                 <!-- <li><a class="text-white" href="#"></a></li> -->
+              <!--  </div> -->
+              <!--  </ul> -->
+            <div class="text-left my-1">
+              <div class="float-left "><a class=" btn btn-md text-white pt-1 pb-1" href="/reservations">
+                <h4>Reservations</h4></a>
+              </div>
+                  <%= render 'pages_change' %>
+             </div>
+          </div>
+         </nav>
+
+    <%= yield %>
+  </div>
+</body>
+</html>

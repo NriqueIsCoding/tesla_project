@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+ <div> <strong>Customer</strong>
+  <%= @reservation.user.name %>
+</p>
+<p>
+  <strong>Reservation number</strong>
+  <%= @reservation.resnum %>
+</p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @reservation.deliverydate %>
+</p>
+
+<p>
+  <strong>Asking Price:</strong>
+  <%= number_to_currency(@reservation.price)%>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @reservation.comment %>
+</p>
+</div>
+
+
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> | <% if @reservation.user.nil? %>
+  <%= link_to 'Back', reservations_path %>
+
+<% else %>
+  <%= link_to 'Back', @reservation.user %>
+<% end %>

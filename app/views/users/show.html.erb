@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<!-- <p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p> -->
+ <!-- <h3>Reservations</h3> -->
+ <table class='table'>
+    	 <thead>
+    <tr>
+    <th>Reservation Number</th>
+    <th>Date of Delivery</th>
+    <th>Asking Price</th>
+  	</tr>
+  </thead>
+</tbody>
+
+   
+ 
+  	<tr>
+      <% @user.reservations.each do |reservation| %>
+ 
+    <td>	<%= reservation.resnum %></td>
+    <td>	 <%= reservation.deliverydate%></td>
+    <td>	 <%= number_to_currency(reservation.price) %></td>
+       <!--  Added on: <%= reservation.created_at %> -->
+      </tr>
+      <% end %>
+       </tbody>
+        </table>
+
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  New Offer
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+   <%= render 'reservations/form' %>
+  </div>
+
+ <%= link_to "Log Out", '/logout', class: 'btn-sm btn-secundary'%>
