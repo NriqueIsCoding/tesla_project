@@ -15,3 +15,247 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-26 20:37:12 -0500
+  [1m[35m (42.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (2.1ms)
+  Rendered pages/_pages_change.html.erb (0.5ms)
+Completed 200 OK in 453ms (Views: 420.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2018-01-26 20:37:18 -0500
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (78.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" ORDER BY price DESC[0m
+  [1m[36mUser Load (21.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (236.3ms)
+  Rendered reservations/_pages_change.html.erb (1.3ms)
+Completed 200 OK in 370ms (Views: 152.6ms | ActiveRecord: 114.4ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2018-01-26 20:37:27 -0500
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" ORDER BY price DESC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (9.8ms)
+  Rendered reservations/_pages_change.html.erb (2.8ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-26 20:37:30 -0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.7ms)
+  Rendered pages/_pages_change.html.erb (0.5ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2018-01-26 20:37:38 -0500
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" ORDER BY price DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (13.3ms)
+  Rendered reservations/_pages_change.html.erb (1.9ms)
+Completed 200 OK in 60ms (Views: 56.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-26 20:37:41 -0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.1ms)
+  Rendered pages/_pages_change.html.erb (2.4ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-01-26 20:37:44 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (26.2ms)
+  Rendered users/new.html.erb within layouts/application (35.3ms)
+  Rendered users/_pages_change.html.erb (0.9ms)
+Completed 200 OK in 98ms (Views: 89.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-01-26 20:38:08 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A/eJ753Cdp8s0OoxCVeZC9kTzn+iVCBcbjipL0CAGkWtVG0/3sK4bDtYE1Ya2GOtVNOzh9onETHkTNtmlwVW6w==", "user"=>{"name"=>"fsf", "email"=>"fsfsdffsdf@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fsfsdffsdf@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (21.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "fsf"], ["email", "fsfsdffsdf@gmail.com"], ["password_digest", "$2a$10$AjcMwRN1.TnivUvn09QmlOIXo0uoSRmfi8Oiqf1BrlGyEbYMuo20i"], ["created_at", "2018-01-27 01:38:08.600279"], ["updated_at", "2018-01-27 01:38:08.600279"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 171ms (ActiveRecord: 34.8ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-01-26 20:38:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (2.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 7]]
+  Rendered reservations/_form.html.erb (24.7ms)
+  Rendered users/show.html.erb within layouts/application (40.3ms)
+  Rendered users/_pages_change.html.erb (0.6ms)
+Completed 200 OK in 97ms (Views: 83.4ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2018-01-26 20:38:34 -0500
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WZNNW3em3dFRgqXRthp+DO6FqJMUp7wdbypJ6SXsnubc0RDO03U/X8SY2+bVxxp2iF8naKH0YZ5YSLY47+qng==", "reservation"=>{"resnum"=>"123456", "deliverydate(3i)"=>"27", "deliverydate(2i)"=>"1", "deliverydate(1i)"=>"2018", "price"=>"6000", "comment"=>"hola", "user_id"=>"7"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (131.8ms)[0m  [1m[32mINSERT INTO "reservations" ("resnum", "deliverydate", "price", "comment", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["resnum", "123456"], ["deliverydate", "2018-01-27"], ["price", "6000.0"], ["comment", "hola"], ["user_id", 7], ["created_at", "2018-01-27 01:38:34.987642"], ["updated_at", "2018-01-27 01:38:34.987642"]]
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/reservations/3
+Completed 302 Found in 178ms (ActiveRecord: 170.7ms)
+
+
+Started GET "/reservations/3" for 127.0.0.1 at 2018-01-26 20:38:35 -0500
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (4.1ms)
+  Rendered reservations/_pages_change.html.erb (0.4ms)
+Completed 200 OK in 60ms (Views: 30.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2018-01-26 20:38:40 -0500
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" ORDER BY price DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (8.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered reservations/_pages_change.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-26 20:43:24 -0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pages/_pages_change.html.erb (0.6ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-01-26 20:43:26 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/new.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered users/_pages_change.html.erb (0.4ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-01-26 20:43:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lu8tdAJc+OjySKyZEVy3lhVbk6hLpb+otKePCQYMwIE4TMmkQVw2G+XAVf4C000wmJvuUDPWjsU+0/1A0YmMLw==", "user"=>{"name"=>"u1", "email"=>"u1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "u1@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "u1"], ["email", "u1@gmail.com"], ["password_digest", "$2a$10$ZoRj6J63YBZMDDD4kQAbQujUeBQj5jce1jsxku3uuYudeAlz/Zfd."], ["created_at", "2018-01-27 01:43:51.157159"], ["updated_at", "2018-01-27 01:43:51.157159"]]
+  [1m[35m (23.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 111ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2018-01-26 20:43:51 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (2.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 8]]
+  Rendered reservations/_form.html.erb (6.0ms)
+  Rendered users/show.html.erb within layouts/application (12.7ms)
+  Rendered users/_pages_change.html.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 50.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2018-01-26 20:52:01 -0500
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aRVista0tP7I8nkp6GWJDTKpr4GJYrT9fMDFa/RHQQwHAGvEgCf7dPKmENE16vyc2zLFvme3+4twHU6Us29Z6Q==", "reservation"=>{"resnum"=>"343434", "deliverydate(3i)"=>"27", "deliverydate(2i)"=>"1", "deliverydate(1i)"=>"2018", "price"=>"123", "comment"=>"hola", "user_id"=>"8"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("resnum", "deliverydate", "price", "comment", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["resnum", "343434"], ["deliverydate", "2018-01-27"], ["price", "123.0"], ["comment", "hola"], ["user_id", 8], ["created_at", "2018-01-27 01:52:01.437615"], ["updated_at", "2018-01-27 01:52:01.437615"]]
+  [1m[35m (121.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/reservations/4
+Completed 302 Found in 127ms (ActiveRecord: 121.8ms)
+
+
+Started GET "/reservations/4" for 127.0.0.1 at 2018-01-26 20:52:01 -0500
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (2.1ms)
+  Rendered reservations/_pages_change.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-29 01:26:01 -0500
+  [1m[35m (43.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.9ms)
+  Rendered pages/_pages_change.html.erb (0.6ms)
+Completed 200 OK in 422ms (Views: 397.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-01-29 01:26:06 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (29.5ms)
+  Rendered users/new.html.erb within layouts/application (37.5ms)
+  Rendered users/_pages_change.html.erb (0.4ms)
+Completed 200 OK in 182ms (Views: 76.2ms | ActiveRecord: 31.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-01-29 01:26:22 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AroKmOK1WtpIvObuHf7RdlMj0a1IXXMenV9Mg6JdR6vFsg7uGaCwrOGALZNYZEBvnE9kdG2lOZTiLT/2wwJFKA==", "user"=>{"name"=>"jorge", "email"=>"jorge@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (55.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (19.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "jorge"], ["email", "jorge@gmail.com"], ["password_digest", "$2a$10$4RHVSou9rd99vELdpDqRROcP8UcbnEH1TZB6PbHppXL.9bym8COfu"], ["created_at", "2018-01-29 06:26:22.904181"], ["updated_at", "2018-01-29 06:26:22.904181"]]
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 228ms (ActiveRecord: 107.8ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2018-01-29 01:26:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (34.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered reservations/_form.html.erb (18.9ms)
+  Rendered users/show.html.erb within layouts/application (67.6ms)
+  Rendered users/_pages_change.html.erb (0.5ms)
+Completed 200 OK in 123ms (Views: 65.9ms | ActiveRecord: 38.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 19:12:47 -0500
+  [1m[35m (53.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (17.3ms)
+  Rendered pages/_pages_change.html.erb (1.1ms)
+Completed 200 OK in 962ms (Views: 919.3ms | ActiveRecord: 0.0ms)
+
+

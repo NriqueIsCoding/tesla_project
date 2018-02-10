@@ -25,11 +25,11 @@
   </thead>
 </tbody>
 
-   
- 
+
+
   	<tr>
       <% @user.reservations.each do |reservation| %>
- 
+
     <td>	<%= reservation.resnum %></td>
     <td>	 <%= reservation.deliverydate%></td>
     <td>	 <%= number_to_currency(reservation.price) %></td>
@@ -42,11 +42,11 @@
 
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
   New Offer
-  </button>
+</button>
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-   <%= render 'reservations/form' %>
+   <%= render 'reservations/form  ' %>
   </div>
 
  <%= link_to "Log Out", '/logout', class: 'btn-sm btn-secundary'%>
